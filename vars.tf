@@ -18,4 +18,3 @@ variable "ssh_pub_key" {
   type        = string
   description = "public key which is deployed on all servers"
 }
-
