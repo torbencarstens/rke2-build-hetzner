@@ -11,3 +11,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
       - run: terraform fmt -check
+
+  check_cloud_run:
+    name: "check cloud run status"
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'curl -H "Authorization: Bearer ${{ secrets.TF_CLOUD_TOKEN }}" -H "Content-Type: application/vnd.api+json" https://app.terraform.io/api/v2/runs/$(curl -H "Authorization: Bearer ${{ secrets.TF_CLOUD_TOKEN }}" -H "Content-Type: application/vnd.api+json" https://app.terraform.io/api/v2/workspaces/${{ secrets.WORKSPACE_ID }}/runs | jq -r ".data[0].id") | jq ".data.attributes"'
