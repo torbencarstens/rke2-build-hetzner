@@ -1,5 +1,7 @@
 # Terraform for rke2 on hetzner
 
+CD is done via terraform cloud (https://app.terraform.io/app/torbencarstens/workspaces/rke2-build-hetzner/runs), set to auto-apply.
+
 ## 1. Setup
 create env file, e.g.:
 
