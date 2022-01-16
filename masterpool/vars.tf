@@ -1,5 +1,5 @@
 variable "ssh_keys" {
-  type        = list
+  type        = list(any)
   description = "ssh key names"
 }
 variable "clustername" {
@@ -7,7 +7,7 @@ variable "clustername" {
   description = "name of the cluster"
 }
 variable "domains" {
-  type        = list
+  type        = list(any)
   description = "list of cluster domains"
 }
 variable "master_count" {
@@ -20,7 +20,7 @@ variable "master_type" {
   description = "machine type to use for the masters"
 }
 variable "extra_ssh_keys" {
-  type        = list
+  type        = list(any)
   default     = []
   description = "Extra ssh keys to inject into Rancher instances"
 }
