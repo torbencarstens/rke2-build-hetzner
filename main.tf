@@ -28,5 +28,5 @@ module "agentpool" {
   network_id = module.clusterbase.network_id
   lb_id = module.clusterbase.lb_id
   api_token = var.api_token
-  agent_count = 3
+  agent_count = 2
 }

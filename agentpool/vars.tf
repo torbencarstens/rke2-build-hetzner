@@ -12,7 +12,7 @@ variable "agent_count" {
 }
 variable "agent_type" {
   type        = string
-  default     = "cx21"
+  default     = "cpx31"
   description = "machine type to use for the agents"
 }
 variable "extra_ssh_keys" {
