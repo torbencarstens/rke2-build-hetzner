@@ -14,3 +14,8 @@ variable "api_token" {
   type        = string
   description = "hetzner api token with read permission to read lb state"
 }
+variable "ssh_pub_key" {
+  type        = string
+  description = "public key which is deployed on all servers"
+}
+
