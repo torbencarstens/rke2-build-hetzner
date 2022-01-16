@@ -32,4 +32,3 @@ jobs:
       - run: echo ${{ secrets.HETZNER_PUB_KEY }} | base64 -d > ~/.ssh/hetzner.pub
       - run: terraform init
       - run: terraform validate
-
