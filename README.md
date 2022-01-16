@@ -41,3 +41,16 @@ Check
 ```bash
 kubectl get nodes
 ```
+
+## Generate terraform variables
+
+**api_token** (`hcloud_token`): goto your hetzner cloud project -> `Security` -> `API TOKENS` (`https://console.hetzner.cloud/projects/{project_id}/security/token`)
+
+**domain**: whereever your k8s cluster should be accessible at (e.g. k8s.example.com)
+
+**clustername**: name of your cluster (e.g. rke2)
+
+**rke2_cluster_secret**: secret token for your cluster (generate random password)
+
+**ssh_pub_key**: pub-key which will be distributed to every server
+
