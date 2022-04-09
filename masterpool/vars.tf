@@ -16,7 +16,7 @@ variable "master_count" {
 }
 variable "master_type" {
   type        = string
-  default     = "cpx21"
+  default     = "cpx31"
   description = "machine type to use for the masters"
 }
 variable "extra_ssh_keys" {
