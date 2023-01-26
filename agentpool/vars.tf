@@ -7,27 +7,18 @@ variable "clustername" {
   description = "name of the cluster"
 }
 variable "agent_count" {
-  default     = 3
+  default     = 1
   description = "Count of rke2 agent servers"
 }
 variable "agent_type" {
   type        = string
-  default     = "cpx31"
+  default     = "cpx21"
   description = "machine type to use for the agents"
 }
 variable "extra_ssh_keys" {
   type        = list(any)
   default     = []
   description = "Extra ssh keys to inject into Rancher instances"
-}
-variable "rke2_cluster_secret" {
-  type        = string
-  description = "Cluster secret for rke2 cluster registration"
-}
-variable "rke2_version" {
-  type        = string
-  default     = ""
-  description = "Version of rke2 to install"
 }
 variable "location" {
   type        = string
@@ -45,8 +36,4 @@ variable "lb_id" {
 variable "network_id" {
   type        = string
   description = "network id to put servers into"
-}
-variable "api_token" {
-  type        = string
-  description = "hetzner api token with read permission to read lb state"
 }

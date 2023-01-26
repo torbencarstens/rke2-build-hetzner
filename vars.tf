@@ -1,20 +1,8 @@
-variable "domain" {
+variable "ssh_pub_key" {
   type        = string
-  description = "domain of the cluster"
-}
-variable "rke2_cluster_secret" {
-  type        = string
-  description = "Cluster secret for rke2 cluster registration"
+  description = "public key which is deployed on all servers"
 }
 variable "clustername" {
   type        = string
   description = "name of the cluster"
-}
-variable "api_token" {
-  type        = string
-  description = "hetzner api token with read permission to read lb state"
-}
-variable "ssh_pub_key" {
-  type        = string
-  description = "public key which is deployed on all servers"
 }

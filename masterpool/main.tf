@@ -2,7 +2,7 @@ resource "hcloud_server" "master" {
   count       = var.master_count
   name        = "${var.clustername}-master-${count.index}"
   location    = var.location
-  image       = "ubuntu-20.04"
+  image       = "debian-11"
   server_type = var.master_type
   labels = {
     cluster : var.clustername,
@@ -12,16 +12,6 @@ resource "hcloud_server" "master" {
   ssh_keys = var.ssh_keys
   user_data = templatefile("${path.module}/server_userdata.tmpl", {
     extra_ssh_keys      = var.extra_ssh_keys,
-    rke2_cluster_secret = var.rke2_cluster_secret,
-    lb_address          = var.lb_ip,
-    lb_external_v4      = var.lb_external_v4,
-    lb_external_v6      = var.lb_external_v6,
-    master_index        = count.index,
-    rke2_version        = var.rke2_version,
-    domains             = var.domains,
-    clustername         = var.clustername,
-    lb_id               = var.lb_id,
-    api_token           = var.api_token
   })
 }
 
