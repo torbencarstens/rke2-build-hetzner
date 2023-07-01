@@ -54,7 +54,7 @@ resource "hcloud_load_balancer_service" "clustername_https" {
   load_balancer_id = hcloud_load_balancer.clustername_controlplane.id
   protocol         = "tcp"
   listen_port      = 443
-  destination_port = 443
+  destination_port = 30443
   health_check {
     protocol = "tcp"
     port     = 443
@@ -68,7 +68,7 @@ resource "hcloud_load_balancer_service" "clustername_http" {
   load_balancer_id = hcloud_load_balancer.clustername_controlplane.id
   protocol         = "tcp"
   listen_port      = 80
-  destination_port = 80
+  destination_port = 30080
   health_check {
     protocol = "tcp"
     port     = 80
